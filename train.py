@@ -24,7 +24,7 @@ train_samples, validation_samples = train_test_split(samples, test_size = 0.2)
 
 def generator(samples, augment=False, batch_size=32):
     num_samples = len(samples)
-    steering_correction = 0.5
+    steering_correction = 2
     while 1:
         random.shuffle(samples)
         for offset in range(0, num_samples, batch_size):
@@ -81,7 +81,7 @@ history_object = model.fit_generator(train_generator,\
                                      nb_val_samples=len(validation_samples),\
                                      nb_epoch=3)
 #model.save('model_'+datetime.datetime.now().strftime('%m_%d_%H_%M_%S') + '.h5')
-model.save('01_slow_lap_st_0.5.h5')
+model.save('01_slow_lap_st_2.h5')
 
 plt.plot(history_object.history['loss'])
 plt.plot(history_object.history['val_loss'])
