@@ -14,7 +14,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/run_result.png "Training Summary"
+[image1]: ./examples/run_result.PNG "Training Summary"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
@@ -85,8 +85,9 @@ Even though my model did not seem to be overfitting, I added regularization to t
 #### 2. Final Model Architecture
 
 The final model architecture (model.py lines 76-102) consisted of a convolution neural network with the following layers and layer sizes:
-| Layer Type | Activation  | Size/Description |
-|----------|:-------------:|------:|
+
+| Layer Type | Activation    | Size/Description |
+|:----------:|:-------------:|:----------------:|
 | Convolutional | ReLU | 5x5 filter, 2x2 subsample, 24 depth, regularization on the weights |
 | Convolutional | ReLU | 5x5 filter, 2x2 subsample, 36 depth |
 | Convolutional | ReLU | 5x5 filter, 2x2 subsample, 48 depth |
