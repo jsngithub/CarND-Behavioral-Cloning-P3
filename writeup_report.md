@@ -1,4 +1,4 @@
-#**Behavioral Cloning** 
+# **Behavioral Cloning** 
 
 ---
 
@@ -17,12 +17,12 @@ The goals / steps of this project are the following:
 [image1]: ./examples/run_result.png "Training Summary"
 
 ## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
+### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
 
 ---
-###Files Submitted & Code Quality
+### Files Submitted & Code Quality
 
-####1. Submission includes all required files and can be used to run the simulator in autonomous mode
+#### 1. Submission includes all required files and can be used to run the simulator in autonomous mode
 
 My project includes the following files:
 * model.py containing the script to create and train the model
@@ -30,41 +30,41 @@ My project includes the following files:
 * model.h5 containing a trained convolutional neural network
 * writeup_report.md summarizing the results
 
-####2. Submission includes functional code
+#### 2. Submission includes functional code
 Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing 
 ```sh
 python drive.py model.h5
 ```
 
-####3. Submission code is usable and readable
+#### 3. Submission code is usable and readable
 
 The model.py file contains the code for training and saving the convolution neural network. The file shows the pipeline I used for training and validating the model, and it contains comments to explain how the code works.
 
-###Model Architecture and Training Strategy
+### Model Architecture and Training Strategy
 
-####1. An appropriate model architecture has been employed
+#### 1. An appropriate model architecture has been employed
 
 The model does use convolutional neural network with 5x5 / 3x3 filter sizes and depths between 24 and 64 (model.py lines 85-89).  The model includes RELU activation function to introduce nonlinearity (passed as a parameter to convolutional and fully connected layers), and the data is normalized in the model using a Keras lambda layer (code line 82). 
 
-####2. Attempts to reduce overfitting in the model
+#### 2. Attempts to reduce overfitting in the model
 
 The model utilizes regularization in order to reduce overfitting (model.py line 85). 
 
 The model was trained and validated on different data sets (80/20 split) to ensure that the model was not overfitting (code line 22).  The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
-####3. Model parameter tuning
+#### 3. Model parameter tuning
 
 The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 102).
 
-####4. Appropriate training data
+#### 4. Appropriate training data
 
 Training data was chosen to keep the vehicle driving on the road. I used a slow center lane driving and used inputs from all three cameras (center, left, right).
 
 For details about how I created the training data, see the next section. 
 
-###Model Architecture and Training Strategy
+### Model Architecture and Training Strategy
 
-####1. Solution Design Approach
+#### 1. Solution Design Approach
 
 The overall strategy for deriving a model architecture was to slowly increase the complexity of the model while observing the behavior of the trained model in the simulator.
 
@@ -82,7 +82,7 @@ This time the car made its way around the track, but did cross the yellow line a
 
 Even though my model did not seem to be overfitting, I added regularization to the first convolutional layer because it was required in the project rubric.  I also increased the steering correction to 5 as the model with regularization seemed to have more difficulty navigating the track.  The final model successfully drives through the track.
 
-####2. Final Model Architecture
+#### 2. Final Model Architecture
 
 The final model architecture (model.py lines 76-102) consisted of a convolution neural network with the following layers and layer sizes:
 | Layer Type | Activation  | Size/Description |
@@ -99,7 +99,7 @@ The final model architecture (model.py lines 76-102) consisted of a convolution 
 | Output layer | None | 1 |
 
 
-####3. Creation of the Training Set & Training Process
+#### 3. Creation of the Training Set & Training Process
 
 The plan was to gradually capture more training data after observing the model behavior.  I started out with one very slow lap around the track, intending to capture several more as needed.  I had also planned to record the vehicle recovering from the left and right side of the road.
 
